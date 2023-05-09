@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,
                 ],
-                home: const HomePage(),
+                home: HomePage(),
               );
             },
           );
