@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           return Consumer<LocaleProvider>(
             builder: (BuildContext context, localeProvider, Widget? child) {
               return MaterialApp(
+                debugShowCheckedModeBanner: false,
                 title: 'Localization App',
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
