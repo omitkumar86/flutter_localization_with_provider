@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization_with_provider/localization/app_localization.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 import '../provider/locale_provider.dart';
 
@@ -21,39 +24,40 @@ class HomePage extends StatelessWidget {
               children: [
                 Text(
                   AppLocalizations.of(context)!.greeting.toString(),
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 24.sp),
                 ),
-                SizedBox(height: 20),
-                // ElevatedButton(
-                //   onPressed: () {
-                //     final newLocale = localeProvider.locale.languageCode == 'en'
-                //         ? Locale('en')
-                //         : Locale('bn');
-                //     localeProvider.setLocale(newLocale);
-                //   },
-                //   child: Text(AppLocalizations.of(context)!.switchButton.toString()),
-                // ),
+                SizedBox(height: 10.h),
+                Text(
+                  AppLocalizations.of(context)!.address.toString(),
+                  style: TextStyle(fontSize: 22.sp),
+                ),
+                SizedBox(height: 30.h),
 
-                Switch(
-                  value: localeProvider.locale.languageCode == 'en',
-                  onChanged: (value) {
-                    final newLocale = value ? Locale('en') : Locale('bn');
-                    localeProvider.setLocale(newLocale);
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(AppLocalizations.of(context)!.switchButton.toString(), style: TextStyle(fontSize: 20.sp),),
+                    FlutterSwitch(
+                      activeText: "BN",
+                      inactiveText: "EN",
+                      activeTextColor: Colors.white,
+                      inactiveTextColor: Colors.white,
+                      valueFontSize: 16.0.sp,
+                      toggleSize: 25.0.sp,
+                      value: localeProvider.locale.languageCode == 'en',
+                      borderRadius: 30.0.r,
+                      padding: 5,
+                      showOnOff: true,
+                      onToggle: (value) {
+                        final newLocale = value ? Locale('en') : Locale('bn');
+                        localeProvider.setLocale(newLocale);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
-
           ),
-          // floatingActionButton: FloatingActionButton(
-          //   onPressed: () {
-          //     final newLocale = localeProvider.locale.languageCode == 'en'
-          //         ? Locale('bn')
-          //         : Locale('en');
-          //     localeProvider.setLocale(newLocale);
-          //   },
-          //   child: Icon(Icons.language),
-          // ),
         );
       },
     );

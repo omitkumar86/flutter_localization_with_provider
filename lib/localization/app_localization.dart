@@ -10,13 +10,15 @@ class AppLocalizations {
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
       'title': 'Localization App',
-      'greeting': 'Omit Kumar',
+      'greeting': 'Name: Omit Kumar',
       'switchButton': 'Change the language',
+      'address': 'Address: Shewrapara, Mirpur, Dhaka',
     },
     'bn': {
       'title': 'লোকালাইজেশন অ্যাপ',
       'greeting': 'অমিত কুমার',
       'switchButton': 'ভাষা পরিবর্তন করুন',
+      'address': 'ঠিকানা: শেওড়াপাড়া, মিরপুর, ঢাকা',
     },
   };
 
@@ -30,6 +32,10 @@ class AppLocalizations {
 
   String? get switchButton {
     return _localizedValues[locale.languageCode]!['switchButton'];
+  }
+
+  String? get address {
+    return _localizedValues[locale.languageCode]!['address'];
   }
 
   static AppLocalizations? of(BuildContext context) {
