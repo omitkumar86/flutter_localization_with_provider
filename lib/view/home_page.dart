@@ -1,4 +1,4 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localization_with_provider/localization/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,24 +24,27 @@ class HomePage extends StatelessWidget {
               children: [
                 Text(
                   AppLocalizations.of(context)!.greeting.toString(),
-                  style: TextStyle(fontSize: 24.sp),
+                  style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w600, color: Colors.orange),
                 ),
                 SizedBox(height: 10.h),
                 Text(
                   AppLocalizations.of(context)!.address.toString(),
-                  style: TextStyle(fontSize: 22.sp),
+                  style: TextStyle(fontSize: 23.sp),
                 ),
                 SizedBox(height: 30.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(AppLocalizations.of(context)!.switchButton.toString(), style: TextStyle(fontSize: 20.sp),),
+                    Text(AppLocalizations.of(context)!.switchButton.toString(),
+                      style: TextStyle(fontSize: 22.sp, color: Colors.green, fontWeight: FontWeight.w500),),
                     FlutterSwitch(
                       activeText: "BN",
                       inactiveText: "EN",
                       activeTextColor: Colors.white,
                       inactiveTextColor: Colors.white,
+                      activeColor: Colors.orange,
+                      inactiveColor: Colors.orange,
                       valueFontSize: 16.0.sp,
                       toggleSize: 25.0.sp,
                       value: localeProvider.locale.languageCode == 'en',
@@ -49,7 +52,7 @@ class HomePage extends StatelessWidget {
                       padding: 5,
                       showOnOff: true,
                       onToggle: (value) {
-                        final newLocale = value ? Locale('en') : Locale('bn');
+                        final newLocale = value ? const Locale('en') : const Locale('bn');
                         localeProvider.setLocale(newLocale);
                       },
                     ),

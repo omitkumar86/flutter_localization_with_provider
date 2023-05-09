@@ -32,11 +32,11 @@ class MyApp extends StatelessWidget {
                   primarySwatch: Colors.blue,
                 ),
                 locale: localeProvider.locale,
-                supportedLocales: [
-                  const Locale('en', ''),
-                  const Locale('bn', ''),
+                supportedLocales: const [
+                  Locale('en', ''),
+                  Locale('bn', ''),
                 ],
-                localizationsDelegates: [
+                localizationsDelegates: const [
                   AppLocalizations.delegate,
                   GlobalMaterialLocalizations.delegate,
                   GlobalWidgetsLocalizations.delegate,

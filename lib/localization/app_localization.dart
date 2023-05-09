@@ -7,7 +7,7 @@ class AppLocalizations {
 
   AppLocalizations(this.locale);
 
-  static Map<String, Map<String, String>> _localizedValues = {
+  static final Map<String, Map<String, String>> _localizedValues = {
     'en': {
       'title': 'Localization App',
       'greeting': 'Name: Omit Kumar',
