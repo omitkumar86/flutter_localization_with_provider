@@ -16,7 +16,7 @@ class AppLocalizations {
     },
     'bn': {
       'title': 'লোকালাইজেশন অ্যাপ',
-      'greeting': 'অমিত কুমার',
+      'greeting': 'নাম: অমিত কুমার',
       'switchButton': 'ভাষা পরিবর্তন করুন',
       'address': 'ঠিকানা: শেওড়াপাড়া, মিরপুর, ঢাকা',
     },
