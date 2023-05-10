@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization_with_provider/localization/app_localization.dart';
 import 'package:flutter_localization_with_provider/provider/locale_provider.dart';
+import 'package:flutter_localization_with_provider/provider/theme_provider.dart';
 import 'package:flutter_localization_with_provider/view/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => LocaleProvider()),
+    ChangeNotifierProvider(create: (_) => ThemeProvider()),
   ], child: const MyApp()));
 }
 
@@ -23,14 +25,12 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return Consumer<LocaleProvider>(
-            builder: (BuildContext context, localeProvider, Widget? child) {
+          return Consumer2<LocaleProvider, ThemeProvider>(
+            builder: (BuildContext context, localeProvider, themeProvider, Widget? child) {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Localization App',
-                theme: ThemeData(
-                  primarySwatch: Colors.blue,
-                ),
+                theme: themeProvider.themeData,
                 locale: localeProvider.locale,
                 supportedLocales: const [
                   Locale('en', ''),
