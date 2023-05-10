@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localization_with_provider/localization/app_localization.dart';
+import 'package:flutter_localization_with_provider/utils/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,7 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             centerTitle: true,
+            backgroundColor: AppColor.appBarColor,
             title: Text(AppLocalizations.of(context)!.title.toString()),
           ),
           body: Center(
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Text(
                   AppLocalizations.of(context)!.greeting.toString(),
-                  style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w600, color: Colors.orange),
+                  style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w600, color: AppColor.primaryOrange),
                 ),
                 SizedBox(height: 10.h),
                 Text(
@@ -37,14 +39,14 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(AppLocalizations.of(context)!.switchButton.toString(),
-                      style: TextStyle(fontSize: 22.sp, color: Colors.green, fontWeight: FontWeight.w500),),
+                      style: TextStyle(fontSize: 22.sp, color: AppColor.greenColor, fontWeight: FontWeight.w500),),
                     FlutterSwitch(
                       activeText: "BN",
                       inactiveText: "EN",
-                      activeTextColor: Colors.white,
-                      inactiveTextColor: Colors.white,
-                      activeColor: Colors.orange,
-                      inactiveColor: Colors.orange,
+                      activeTextColor: AppColor.primaryWhite,
+                      inactiveTextColor: AppColor.primaryWhite,
+                      activeColor: AppColor.primaryOrange,
+                      inactiveColor: AppColor.primaryOrange,
                       valueFontSize: 16.0.sp,
                       toggleSize: 25.0.sp,
                       value: localeProvider.locale.languageCode == 'en',
