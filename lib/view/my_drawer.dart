@@ -5,8 +5,6 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 import '../provider/theme_provider.dart';
 import '../utils/app_color.dart';
-import '../utils/theme/dark_theme.dart';
-import '../utils/theme/light_theme.dart';
 
 
 class MyDrawerPage extends StatefulWidget {
@@ -22,6 +20,7 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+
     return SafeArea(
       child: Drawer(
         width: 233.w,
@@ -48,9 +47,8 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                   showOnOff: true,
                   inactiveIcon: Icon(Icons.light_mode, color: AppColor.primaryBlack,),
                   activeIcon: Icon(Icons.dark_mode, color: AppColor.primaryBlack,),
-                  onToggle: (value) {
-                   final changeThemeData = value ? darkTheme : lightTheme;
-                   themeProvider.setThemeData(changeThemeData);
+                  onToggle: (_) {
+                   themeProvider.toggleTheme();
                   },
                 ),
               ],

@@ -5,7 +5,7 @@ ThemeData darkTheme = ThemeData(
   primaryColor: Color(0xFF0B4461),
   cardColor: null,
   canvasColor: null,
-  drawerTheme: DrawerThemeData(backgroundColor: Color(0xff0F2333),
+  drawerTheme: DrawerThemeData(backgroundColor: Color(0xFF0B4461),
       shadowColor: Color(0xFF0B4461)),
   disabledColor: null,
   backgroundColor: null,

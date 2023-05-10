@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                       inactiveColor: AppColor.primaryOrange,
                       valueFontSize: 14.0.sp,
                       toggleSize: 25.0.sp,
-                      value: localeProvider.locale.languageCode == 'bn',
+                      value: localeProvider.locale?.languageCode == 'bn',
                       borderRadius: 40.0.r,
                       padding: 5,
                       showOnOff: true,
