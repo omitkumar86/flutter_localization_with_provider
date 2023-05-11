@@ -37,16 +37,19 @@ class _MyDrawerPageState extends State<MyDrawerPage> {
                   inactiveText: "Dark",
                   activeTextColor: AppColor.primaryWhite,
                   inactiveTextColor: AppColor.primaryWhite,
+                  inactiveColor: AppColor.primaryBlue,
                   activeColor: AppColor.primaryOrange,
-                  inactiveColor: AppColor.primaryOrange,
+                  activeToggleColor: AppColor.appBarColor,
+                  inactiveToggleColor: AppColor.primaryYellow,
                   valueFontSize: 14.0.sp,
                   toggleSize: 25.0.sp,
                   value: themeProvider.themeData?.brightness == Brightness.dark,
                   borderRadius: 40.0.r,
                   padding: 5,
                   showOnOff: true,
-                  inactiveIcon: Icon(Icons.light_mode, color: AppColor.primaryBlack,),
-                  activeIcon: Icon(Icons.dark_mode, color: AppColor.primaryBlack,),
+                  inactiveIcon: Icon(Icons.light_mode, color: AppColor.primaryWhite,),
+                  activeIcon: Icon(Icons.dark_mode, color: AppColor.primaryWhite,),
+
                   onToggle: (_) {
                    themeProvider.toggleTheme();
                   },
